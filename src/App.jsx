@@ -6,10 +6,10 @@ import Details from './pages/Details'
 import Workout from './pages/Workout'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import ErrorPage from './pages/ErrorPage'
 
 function App() {
   const [openNav, setOpenNav] = useState(false)
-  const [categories, setCategories] = useState([])
 
   function toggleSidebar() {
     setOpenNav(!openNav)
@@ -23,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/exercise/:id" element={<Details />} />
         <Route path="/workout" element={<Workout />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   )

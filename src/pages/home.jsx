@@ -1,33 +1,29 @@
-import { css } from '@emotion/react'
+import { useEffect, useState } from 'react'
+import { exerciseOptions, getData } from '../utilities/getData'
 
-import showcaseImg from '../assets/workout.png'
+import Showcase from '../components/Showcase'
+import BodyParts from '../components/BodyParts'
 
 export default function Home() {
+  const [exercises, setExercises] = useState([])
+
+  useEffect(() => {
+    const getExercises = async () => {
+      const exerciseData = await getData(
+        'https://exercises2.p.rapidapi.com/?count=100',
+        exerciseOptions
+      )
+      setExercises(exerciseData)
+    }
+    getExercises()
+  }, [])
+
+  const bodyParts = Array.from(new Set(exercises.map(e => e.bodyPart)))
+
   return (
-    <div
-      className="section"
-      css={css`
-        position: relative;
-        text-align: center;
-
-        h1 {
-          font-size: 3rem;
-          position: absolute;
-          top: 5%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-
-          span {
-            color: var(--color-primary);
-          }
-        }
-      `}
-    >
-      <img src={showcaseImg} alt="" />
-      <h1>
-        git<span>Fit</span>
-      </h1>
-      <p>Accomplish more, feel better, get fit!</p>
-    </div>
+    <>
+      <Showcase />
+      <BodyParts bodyParts={bodyParts} />
+    </>
   )
 }
