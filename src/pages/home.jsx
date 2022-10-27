@@ -1,13 +1,33 @@
 import { css } from '@emotion/react'
 
+import showcaseImg from '../assets/workout.png'
+
 export default function Home() {
   return (
     <div
+      className="section"
       css={css`
-        margin-top: 10vh;
+        position: relative;
+        text-align: center;
+
+        h1 {
+          font-size: 3rem;
+          position: absolute;
+          top: 5%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          span {
+            color: var(--color-primary);
+          }
+        }
       `}
     >
-      <h1>Home Page</h1>
+      <img src={showcaseImg} alt="" />
+      <h1>
+        git<span>Fit</span>
+      </h1>
+      <p>Accomplish more, feel better, get fit!</p>
     </div>
   )
 }

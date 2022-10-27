@@ -58,3 +58,8 @@ li {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* utilites */
+.section {
+  margin-top: 10vh;
+}

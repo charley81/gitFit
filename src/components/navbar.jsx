@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { css } from '@emotion/react'
 import { CgMenuGridO } from 'react-icons/cg'
+import { IoIosFitness } from 'react-icons/io'
 
 export default function Navbar({ toggleSidebar }) {
   return (
@@ -23,12 +24,17 @@ export default function Navbar({ toggleSidebar }) {
 
         .nav-header {
           display: flex;
+          height: 100%;
           justify-content: space-between;
           align-items: center;
 
           a {
             color: var(--color-light);
           }
+        }
+
+        .logo {
+          font-size: 2rem;
         }
 
         button {
@@ -83,15 +89,15 @@ export default function Navbar({ toggleSidebar }) {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <h2>gitFit</h2>
+            <IoIosFitness className="logo" />
           </Link>
-          <button aria-label="toggle">
-            <CgMenuGridO
-              type="button"
-              className="toggle-btn"
-              onClick={toggleSidebar}
-            />
-          </button>
+
+          <CgMenuGridO
+            aria-label="toggle"
+            type="button"
+            className="toggle-btn"
+            onClick={toggleSidebar}
+          />
         </div>
         <ul className="section-links">
           <Link to="/workout">
