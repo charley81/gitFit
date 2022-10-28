@@ -1,24 +1,22 @@
 import { css } from '@emotion/react'
+import { ScrollMenu } from 'react-horizontal-scrolling-menu'
 
 import BodyPart from './BodyPart'
 
 export default function BodyParts({ bodyParts }) {
   return (
-    <div
-      css={css`
-        margin: 4rem 0;
-
-        h3 {
-          text-align: center;
-        }
-      `}
-    >
-      <h3>Click a body part to get started</h3>
-      <ul>
+    <ScrollMenu>
+      <ul
+        css={css`
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+        `}
+      >
         {bodyParts.map(item => (
           <BodyPart key={item} item={item} />
         ))}
       </ul>
-    </div>
+    </ScrollMenu>
   )
 }
