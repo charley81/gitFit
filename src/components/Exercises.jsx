@@ -7,7 +7,8 @@ export default function Exercises({ exercises, onAddToWorkout }) {
   return (
     <section
       css={css`
-        margin: 4rem 0;
+        max-width: var(--max-width);
+        margin: 0 auto;
       `}
     >
       {exerciseList.map(item => (

@@ -34,7 +34,7 @@ export default function Navbar({ toggleSidebar }) {
         }
 
         .logo {
-          font-size: 2rem;
+          font-size: 3rem;
         }
 
         button {
@@ -72,6 +72,8 @@ export default function Navbar({ toggleSidebar }) {
             color: var(--color-light);
             cursor: pointer;
             transition: var(--transition);
+            font-size: 1.3rem;
+            font-weight: 700;
 
             &:hover {
               color: var(--color-primary);

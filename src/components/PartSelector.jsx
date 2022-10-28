@@ -9,18 +9,21 @@ export default function PartSelector({
   return (
     <div
       css={css`
-        margin: 1rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
 
         label {
           display: block;
           width: 100%;
           margin-bottom: 0.25rem;
+          font-size: 1.1rem;
+          font-weight: 700;
         }
 
         select {
           display: block;
           width: 100%;
-          padding: 1rem;
+          padding: 0.5rem;
           border-radius: var(--border-radius);
           background: var(--color-light);
         }
