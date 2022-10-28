@@ -3,10 +3,7 @@ import { exerciseOptions, getData } from '../utilities/getData'
 
 import Showcase from '../components/Showcase'
 import ScrollMenu from '../components/ScrollMenu'
-<<<<<<< HEAD
-=======
 import Exercises from '../components/Exercises'
->>>>>>> working
 
 export default function Home() {
   const [exercises, setExercises] = useState([])
@@ -28,10 +25,7 @@ export default function Home() {
     <>
       <Showcase />
       <ScrollMenu bodyParts={bodyParts} />
-<<<<<<< HEAD
-=======
       <Exercises exercises={exercises} />
->>>>>>> working
     </>
   )
 }

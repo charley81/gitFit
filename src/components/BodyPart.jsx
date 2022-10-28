@@ -1,8 +1,5 @@
 import { GiWeightLiftingUp } from 'react-icons/gi'
-<<<<<<< HEAD
-=======
 import { css } from '@emotion/react'
->>>>>>> working
 
 export default function BodyPart({ item }) {
   return (
