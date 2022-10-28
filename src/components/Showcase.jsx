@@ -8,11 +8,15 @@ export default function Showcase() {
       css={css`
         position: relative;
         text-align: center;
+        margin-bottom: 4rem;
 
-        h1 {
-          font-size: 4rem;
+        .content {
+          h1 {
+            font-size: 4rem;s
+          }
+
           position: absolute;
-          top: 5%;
+          top: 15%;
           left: 50%;
           transform: translate(-50%, -50%);
 
@@ -23,10 +27,11 @@ export default function Showcase() {
       `}
     >
       <img src={showcaseImg} alt="" />
-      <h1>
-        git<span>Fit</span>
-      </h1>
-      <p>Accomplish more, feel better, get fit!</p>
+      <div className="content">
+        <h1>
+          git<span>Fit</span>
+        </h1>
+      </div>
     </div>
   )
 }
