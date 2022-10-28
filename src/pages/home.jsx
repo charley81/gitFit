@@ -7,6 +7,11 @@ import Exercises from '../components/Exercises'
 
 export default function Home() {
   const [exercises, setExercises] = useState([])
+  const [bodyPart, setBodyPart] = useState('')
+
+  const handleBodyPartChange = value => {
+    setBodyPart(value)
+  }
 
   useEffect(() => {
     const getExercises = async () => {
@@ -24,7 +29,11 @@ export default function Home() {
   return (
     <>
       <Showcase />
-      <PartSelector bodyParts={bodyParts} />
+      <PartSelector
+        bodyParts={bodyParts}
+        bodyPart={bodyPart}
+        onChange={handleBodyPartChange}
+      />
       <Exercises exercises={exercises} />
     </>
   )
