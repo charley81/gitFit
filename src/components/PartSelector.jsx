@@ -1,10 +1,24 @@
 import { css } from '@emotion/react'
 
-import BodyPart from './BodyPart'
-
 export default function PartSelector({ bodyParts }) {
   return (
-    <div>
+    <div
+      css={css`
+        margin: 1rem;
+
+        label {
+          display: block;
+          width: 100%;
+          margin-bottom: 0.25rem;
+        }
+
+        select {
+          display: block;
+          width: 100%;
+          padding: 1rem;
+        }
+      `}
+    >
       <label htmlFor="part">Choose a Body Part</label>
       <select name="part" id="part">
         <option value=""></option>
