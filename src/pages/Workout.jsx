@@ -1,13 +1,10 @@
 import ExerciseItem from '../components/ExerciseItem'
 
 export default function Workout({ workoutList }) {
-  console.log(workoutList)
   if (workoutList) {
     return (
       <div className="section">
-        {workoutList.map(item => (
-          <ExerciseItem key={item.id} item={item} />
-        ))}
+        <h1>Workouts here</h1>
       </div>
     )
   } else {

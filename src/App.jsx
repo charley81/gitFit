@@ -67,7 +67,10 @@ function App() {
             />
           }
         />
-        <Route path="/exercise/:id" element={<Details />} />
+        <Route
+          path="/exercise/:id"
+          element={<Details exercises={exercises} />}
+        />
         <Route
           path="/workout"
           element={<Workout workoutList={workoutList} />}
