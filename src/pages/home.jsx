@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { exerciseOptions, getData } from '../utilities/getData'
 
 import Showcase from '../components/Showcase'
-import PartSelector from '../components/partSelector'
+import PartSelector from '../components/PartSelector'
 import Exercises from '../components/Exercises'
 
 export default function Home() {
