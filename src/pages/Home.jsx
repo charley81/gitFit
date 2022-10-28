@@ -9,6 +9,12 @@ export default function Home() {
   const [exercises, setExercises] = useState([])
   const [bodyPart, setBodyPart] = useState('')
 
+  let newExercises
+
+  if (bodyPart) {
+    newExercises = exercises.filter(e => e.bodyPart === bodyPart)
+  }
+
   const handleBodyPartChange = value => {
     setBodyPart(value)
   }
@@ -32,9 +38,13 @@ export default function Home() {
       <PartSelector
         bodyParts={bodyParts}
         bodyPart={bodyPart}
-        onChange={handleBodyPartChange}
+        onhandleValueChange={handleBodyPartChange}
       />
-      <Exercises exercises={exercises} />
+      {newExercises ? (
+        <Exercises exercises={newExercises} />
+      ) : (
+        <Exercises exercises={exercises} />
+      )}
     </>
   )
 }

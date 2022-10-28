@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { css } from '@emotion/react'
 
-export default function PartSelector({ bodyParts, bodyPart, onChange }) {
+export default function PartSelector({
+  bodyParts,
+  bodyPart,
+  onhandleValueChange
+}) {
   return (
     <div
       css={css`
@@ -26,7 +30,7 @@ export default function PartSelector({ bodyParts, bodyPart, onChange }) {
         name="part"
         id="part"
         value={bodyPart}
-        onChange={e => onChange(e.target.value)}
+        onChange={e => onhandleValueChange(e.target.value)}
       >
         <option value=""></option>
         {bodyParts.map(item => (
