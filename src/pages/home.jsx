@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { exerciseOptions, getData } from '../utilities/getData'
 
 import Showcase from '../components/Showcase'
-import ScrollMenu from '../components/ScrollMenu'
+import PartSelector from '../components/partSelector'
 import Exercises from '../components/Exercises'
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Showcase />
-      <ScrollMenu bodyParts={bodyParts} />
+      <PartSelector bodyParts={bodyParts} />
       <Exercises exercises={exercises} />
     </>
   )
