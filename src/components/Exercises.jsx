@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import ExerciseItem from './ExerciseItem'
 
-export default function Exercises({ exercises }) {
+export default function Exercises({ exercises, onAddToWorkout }) {
   const exerciseList = exercises.slice(0, 10)
 
   return (
@@ -11,7 +11,11 @@ export default function Exercises({ exercises }) {
       `}
     >
       {exerciseList.map(item => (
-        <ExerciseItem key={item.id} item={item} />
+        <ExerciseItem
+          key={item.id}
+          item={item}
+          onAddExercise={onAddToWorkout}
+        />
       ))}
     </section>
   )

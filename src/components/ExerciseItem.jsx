@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { css } from '@emotion/react'
 
-export default function ExerciseItem({ item }) {
+export default function ExerciseItem({ item, onAddExercise }) {
   const { id, name, bodyPart, equipmentUsed } = item
 
   return (
@@ -28,9 +28,22 @@ export default function ExerciseItem({ item }) {
             border-radius: var(--border-radius);
           }
         }
+
+        button {
+          cursor: pointer;
+        }
       `}
     >
       <h4>{name}</h4>
+      <button
+        onClick={e => {
+          e.stopPropagation()
+          e.preventDefault()
+          onAddExercise(item.id)
+        }}
+      >
+        Add to Workout
+      </button>
       <div className="tags">
         <p>{bodyPart}</p>
         <p>{equipmentUsed}</p>

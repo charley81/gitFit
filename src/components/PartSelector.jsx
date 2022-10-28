@@ -22,6 +22,7 @@ export default function PartSelector({
           width: 100%;
           padding: 1rem;
           border-radius: var(--border-radius);
+          background: var(--color-light);
         }
       `}
     >
