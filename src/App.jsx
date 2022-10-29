@@ -15,8 +15,6 @@ function App() {
   const [exercises, setExercises] = useState([])
   const [bodyPart, setBodyPart] = useState('')
 
-  console.log(workoutList)
-
   let newExercises
 
   if (bodyPart) {
