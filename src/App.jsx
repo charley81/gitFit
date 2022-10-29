@@ -71,6 +71,7 @@ function App() {
           path="/exercise/:id"
           element={<Details exercises={exercises} />}
         />
+        ``{' '}
         <Route
           path="/workout"
           element={<Workout workoutList={workoutList} />}
