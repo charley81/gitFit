@@ -6,7 +6,7 @@ export default function Exercises({
   onAddToWorkout,
   onRemoveExercise
 }) {
-  const exerciseList = exercises.slice(0, 100)
+  const exerciseList = exercises.slice(0, 10)
 
   return (
     <section
@@ -17,7 +17,7 @@ export default function Exercises({
 
         @media screen and (min-width: 768px) {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: auto auto;
           gap: 1rem;
         }
       `}
