@@ -24,7 +24,12 @@ export default function Workout({ workoutList, onRemoveExercise }) {
     )
   } else {
     return (
-      <div className="section">
+      <div
+        className="section none"
+        css={css`
+          text-align: center;
+        `}
+      >
         <h1>No workouts added</h1>
       </div>
     )

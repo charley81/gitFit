@@ -6,7 +6,7 @@ export default function Exercises({
   onAddToWorkout,
   onRemoveExercise
 }) {
-  const exerciseList = exercises.slice(0, 10)
+  const exerciseList = exercises.slice(0, 100)
 
   return (
     <section

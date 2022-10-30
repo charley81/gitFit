@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { css } from '@emotion/react'
 
@@ -6,9 +7,16 @@ export default function ExerciseItem({
   onAddExercise,
   onRemoveExercise
 }) {
+  const [showMore, setShowMore] = useState(false)
+
   const { id, name, bodyPart, equipmentUsed } = item
 
   let location = useLocation()
+
+  function handleMoreClick(e) {
+    e.preventDefault()
+    setShowMore(!showMore)
+  }
 
   return (
     <Link
@@ -45,6 +53,18 @@ export default function ExerciseItem({
           border-radius: var(--border-radius);
         }
 
+        .tracker {
+          margin: 2rem 0;
+
+          input {
+            margin: 0 1rem 0 0.25rem;
+            padding: 0.25rem;
+            border-radius: var(--border-radius);
+            outline: none;
+            border: none;
+          }
+        }
+
         @media screen and (min-width: 600px) {
           .header {
             display: flex;
@@ -68,15 +88,39 @@ export default function ExerciseItem({
 
       <div className="buttons">
         {location.pathname === '/workout' ? (
-          <button
-            onClick={e => {
-              e.stopPropagation()
-              e.preventDefault()
-              onRemoveExercise(item.id)
-            }}
-          >
-            Remove from Workout
-          </button>
+          <div className="info">
+            <div className="buttons">
+              <button
+                onClick={e => {
+                  e.stopPropagation()
+                  e.preventDefault()
+                  onRemoveExercise(item.id)
+                }}
+              >
+                Remove from Workout
+              </button>
+              <button onClick={handleMoreClick}>
+                {showMore ? 'Hide' : 'Show'} Tracker
+              </button>
+            </div>
+            {showMore && (
+              <form className="tracker">
+                <label htmlFor="weight">
+                  Weight lbs
+                  <input type="number" id="weight" name="weight" />
+                </label>
+                <label htmlFor="reps">
+                  Reps
+                  <input type="number" id="reps" name="reps" />
+                </label>
+                <label htmlFor="sets">
+                  Sets
+                  <input type="number" id="sets" name="sets" />
+                </label>
+                <button type="submit">Submit</button>
+              </form>
+            )}
+          </div>
         ) : (
           <button
             onClick={e => {
