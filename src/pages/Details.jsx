@@ -4,9 +4,16 @@ import { BiDumbbell } from 'react-icons/bi'
 import { GiMuscleUp } from 'react-icons/gi'
 import { BiBody } from 'react-icons/bi'
 
-export default function Details({ exercises }) {
+import ExerciseItem from '../components/ExerciseItem'
+
+export default function Details({ exercises, onAddToWorkout }) {
   const { id } = useParams()
+
   const selectedExercise = exercises.find(e => e.id === id)
+
+  const similiarExercises = exercises
+    .filter(e => e.bodyPart === selectedExercise.bodyPart)
+    .slice(0, 3)
 
   return (
     <div
@@ -40,6 +47,16 @@ export default function Details({ exercises }) {
           <BiDumbbell />
           <p>Equipment Used: {selectedExercise.equipmentUsed}</p>
         </div>
+      </section>
+      <section>
+        <h3>Similiar Exercies</h3>
+        {similiarExercises.map(item => (
+          <ExerciseItem
+            key={item.id}
+            item={item}
+            onAddExercise={onAddToWorkout}
+          />
+        ))}
       </section>
     </div>
   )

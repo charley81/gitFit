@@ -72,7 +72,12 @@ function App() {
         />
         <Route
           path="/exercise/:id"
-          element={<Details exercises={exercises} />}
+          element={
+            <Details
+              exercises={exercises}
+              onAddToWorkout={handleAddToWorkout}
+            />
+          }
         />
         ``{' '}
         <Route
