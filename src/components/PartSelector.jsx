@@ -10,20 +10,21 @@ export default function PartSelector({
     <div
       css={css`
         max-width: var(--max-width);
+        padding: 0 1rem;
         margin: 0 auto;
 
         label {
           display: block;
           width: 100%;
-          margin-bottom: 0.25rem;
           font-size: 1.1rem;
           font-weight: 700;
+          margin-bottom: 0.25rem;
         }
 
         select {
           display: block;
           width: 100%;
-          padding: 0.5rem;
+          padding: 1rem;
           border-radius: var(--border-radius);
           background: var(--color-light);
         }
@@ -36,7 +37,7 @@ export default function PartSelector({
         value={bodyPart}
         onChange={e => onhandleValueChange(e.target.value)}
       >
-        <option value=""></option>
+        <option value="all">All</option>
         {bodyParts.map(item => (
           <option key={item} value={item}>
             {item}

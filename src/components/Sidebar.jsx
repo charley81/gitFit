@@ -29,6 +29,10 @@ export default function Sidebar({ openNav, toggleSidebar }) {
           transition: var(--transition);
           text-align: center;
           color: var(--color-light);
+
+          &:hover {
+            color: var(--color-primary);
+          }
         }
 
         button {
@@ -41,6 +45,10 @@ export default function Sidebar({ openNav, toggleSidebar }) {
           background: transparent;
           border: transparent;
           transition: var(--transition);
+
+          &:hover {
+            color: var(--color-primary);
+          }
         }
       `}
     >

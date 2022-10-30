@@ -8,28 +8,24 @@ export default function ExerciseItem({ item, onAddExercise }) {
     <Link
       to={`/exercise/${id}`}
       css={css`
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        display: block;
+        width: 100%;
         background: var(--color-grey-dark);
-        padding: 1rem;
         border-radius: var(--border-radius);
         color: var(--color-light);
         margin: 1rem 0;
+        padding: 1rem;
 
         h4 {
           text-transform: capitalize;
+          margin-bottom: 0.25rem;
         }
 
         .tags {
           display: flex;
 
           p {
-            border: 1px solid var(--color-light);
-            font-size: 0.75rem;
-            color: var(--color-light);
-            padding: 0.25rem;
-            border-radius: var(--border-radius);
+            margin-right: 1rem;
           }
         }
 
@@ -39,13 +35,28 @@ export default function ExerciseItem({ item, onAddExercise }) {
           border: 1px solid transparent;
           color: var(--color-dark);
           padding: 0.25rem;
-          margin-top: 0.5rem;
+          margin: 0.5rem 1rem 0 0;
           border-radius: var(--border-radius);
+        }
+
+        @media screen and (min-width: 600px) {
+          .header {
+            display: flex;
+            justify-content: space-between;
+          }
         }
       `}
     >
-      <div className="left-side">
-        <h4>{name}</h4>
+      <div className="header">
+        <h3>{name}</h3>
+
+        <div className="tags">
+          <p>{bodyPart}</p>
+          <p>{equipmentUsed}</p>
+        </div>
+      </div>
+
+      <div className="buttons">
         <button
           onClick={e => {
             e.stopPropagation()
@@ -55,11 +66,15 @@ export default function ExerciseItem({ item, onAddExercise }) {
         >
           Add to Workout
         </button>
-      </div>
-
-      <div className="tags">
-        <p>{bodyPart}</p>
-        <p>{equipmentUsed}</p>
+        <button
+          onClick={e => {
+            e.stopPropagation()
+            e.preventDefault()
+            onAddExercise(item.id)
+          }}
+        >
+          Remove from Workout
+        </button>
       </div>
     </Link>
   )

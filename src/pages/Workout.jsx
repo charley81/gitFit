@@ -1,8 +1,7 @@
 import ExerciseItem from '../components/ExerciseItem'
 
 export default function Workout({ workoutList }) {
-  console.log(workoutList)
-  if (workoutList) {
+  if (workoutList.length) {
     return (
       <div className="section">
         {workoutList.map(item => (
@@ -12,7 +11,7 @@ export default function Workout({ workoutList }) {
     )
   } else {
     return (
-      <div>
+      <div className="section">
         <h1>No workouts added</h1>
       </div>
     )

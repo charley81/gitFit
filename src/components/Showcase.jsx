@@ -8,11 +8,10 @@ export default function Showcase() {
       css={css`
         position: relative;
         text-align: center;
-        margin-bottom: 4rem;
 
         .content {
           h1 {
-            font-size: 4rem;s
+            font-size: 4rem;
           }
 
           position: absolute;
@@ -22,6 +21,16 @@ export default function Showcase() {
 
           span {
             color: var(--color-primary);
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          h1 {
+            font-size: 6rem;
+          }
+
+          img {
+            height: 70vh;
           }
         }
       `}

@@ -8,6 +8,7 @@ export default function Exercises({ exercises, onAddToWorkout }) {
     <section
       css={css`
         max-width: var(--max-width);
+        padding: 1rem;
         margin: 0 auto;
       `}
     >
