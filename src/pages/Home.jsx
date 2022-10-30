@@ -8,7 +8,8 @@ export default function Home({
   bodyParts,
   onBodyPartChange,
   exercises,
-  newExercises
+  newExercises,
+  onRemoveExercise
 }) {
   return (
     <>
@@ -19,9 +20,17 @@ export default function Home({
         onhandleValueChange={onBodyPartChange}
       />
       {newExercises ? (
-        <Exercises exercises={newExercises} onAddToWorkout={onAddToWorkout} />
+        <Exercises
+          exercises={newExercises}
+          onAddToWorkout={onAddToWorkout}
+          onRemoveExercise={onRemoveExercise}
+        />
       ) : (
-        <Exercises exercises={exercises} onAddToWorkout={onAddToWorkout} />
+        <Exercises
+          exercises={exercises}
+          onAddToWorkout={onAddToWorkout}
+          onRemoveExercise={onRemoveExercise}
+        />
       )}
     </>
   )

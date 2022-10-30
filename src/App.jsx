@@ -43,6 +43,10 @@ function App() {
     setWorkoutList([...workoutList, selectedExercise])
   }
 
+  function handleRemoveFromWorkout(id) {
+    setWorkoutList(workoutList.filter(w => w.id !== id))
+  }
+
   function toggleSidebar() {
     setOpenNav(!openNav)
   }
@@ -62,6 +66,7 @@ function App() {
               onBodyPartChange={handleBodyPartChange}
               exercises={exercises}
               newExercises={newExercises}
+              onRemoveExercise={handleRemoveFromWorkout}
             />
           }
         />
@@ -72,7 +77,12 @@ function App() {
         ``{' '}
         <Route
           path="/workout"
-          element={<Workout workoutList={workoutList} />}
+          element={
+            <Workout
+              workoutList={workoutList}
+              onRemoveExercise={handleRemoveFromWorkout}
+            />
+          }
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { css } from '@emotion/react'
 
-export default function ExerciseItem({ item, onAddExercise }) {
+export default function ExerciseItem({
+  item,
+  onAddExercise,
+  onRemoveExercise
+}) {
   const { id, name, bodyPart, equipmentUsed } = item
+
+  let location = useLocation()
 
   return (
     <Link
@@ -57,24 +63,27 @@ export default function ExerciseItem({ item, onAddExercise }) {
       </div>
 
       <div className="buttons">
-        <button
-          onClick={e => {
-            e.stopPropagation()
-            e.preventDefault()
-            onAddExercise(item.id)
-          }}
-        >
-          Add to Workout
-        </button>
-        <button
-          onClick={e => {
-            e.stopPropagation()
-            e.preventDefault()
-            onAddExercise(item.id)
-          }}
-        >
-          Remove from Workout
-        </button>
+        {location.pathname === '/workout' ? (
+          <button
+            onClick={e => {
+              e.stopPropagation()
+              e.preventDefault()
+              onRemoveExercise(item.id)
+            }}
+          >
+            Remove from Workout
+          </button>
+        ) : (
+          <button
+            onClick={e => {
+              e.stopPropagation()
+              e.preventDefault()
+              onAddExercise(item.id)
+            }}
+          >
+            Add to Workout
+          </button>
+        )}
       </div>
     </Link>
   )
