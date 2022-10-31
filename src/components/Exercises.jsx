@@ -14,11 +14,11 @@ export default function Exercises({
         max-width: var(--max-width);
         padding: 1rem;
         margin: 0 auto;
+        display: grid;
+        gap: 1rem;
 
         @media screen and (min-width: 768px) {
-          display: grid;
-          grid-template-columns: auto auto;
-          gap: 1rem;
+          grid-template-columns: 1fr 1fr;
         }
       `}
     >

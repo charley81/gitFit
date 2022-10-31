@@ -27,7 +27,6 @@ export default function ExerciseItem({
         background: var(--color-grey-dark);
         border-radius: var(--border-radius);
         color: var(--color-light);
-        margin: 1rem 0;
         padding: 1rem;
 
         h4 {
@@ -71,6 +70,12 @@ export default function ExerciseItem({
             justify-content: space-between;
           }
         }
+
+        ${
+          '' /* @media screen and (min-width: 600px) {
+          margin: 0;
+        } */
+        }
       `}
     >
       <div className="header">
@@ -103,17 +108,34 @@ export default function ExerciseItem({
               <form className="tracker">
                 <label htmlFor="weight">
                   Weight lbs
-                  <input type="number" id="weight" name="weight" />
+                  <input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    onClick={e => e.preventDefault()}
+                  />
                 </label>
                 <label htmlFor="reps">
                   Reps
-                  <input type="number" id="reps" name="reps" />
+                  <input
+                    type="number"
+                    id="reps"
+                    name="reps"
+                    onClick={e => e.preventDefault()}
+                  />
                 </label>
                 <label htmlFor="sets">
                   Sets
-                  <input type="number" id="sets" name="sets" />
+                  <input
+                    type="number"
+                    id="sets"
+                    name="sets"
+                    onClick={e => e.preventDefault()}
+                  />
                 </label>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={e => e.preventDefault()}>
+                  Submit
+                </button>
               </form>
             )}
           </div>

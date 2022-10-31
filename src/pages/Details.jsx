@@ -100,7 +100,13 @@ export default function Details({ exercises, onAddToWorkout }) {
 
       <section>
         <h3>Similiar Exercies</h3>
-        <div className="exercises">
+        <div
+          className="exercises"
+          css={css`
+            display: grid;
+            gap: 1rem;
+          `}
+        >
           {similiarExercises.map(item => (
             <ExerciseItem
               className="item"

@@ -11,6 +11,8 @@ export default function Workout({ workoutList, onRemoveExercise }) {
           max-width: var(--max-width);
           padding: 1rem;
           margin: 4rem auto 0;
+          display: grid;
+          gap: 1rem;
         `}
       >
         {workoutList.map(item => (
