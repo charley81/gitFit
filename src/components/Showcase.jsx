@@ -11,7 +11,7 @@ export default function Showcase() {
 
         .content {
           h1 {
-            font-size: 4rem;
+            font-size: 6rem;
           }
 
           position: absolute;
@@ -25,12 +25,30 @@ export default function Showcase() {
         }
 
         @media screen and (min-width: 768px) {
-          h1 {
-            font-size: 6rem;
+          .content {
+            h1 {
+              font-size: 8rem;
+
+              span {
+                font-size: 8rem;
+              }
+            }
           }
 
           img {
             height: 70vh;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          .content {
+            h1 {
+              font-size: 10rem;
+
+              span {
+                font-size: 10rem;
+              }
+            }
           }
         }
       `}
