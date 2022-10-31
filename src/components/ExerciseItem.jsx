@@ -70,12 +70,6 @@ export default function ExerciseItem({
             justify-content: space-between;
           }
         }
-
-        ${
-          '' /* @media screen and (min-width: 600px) {
-          margin: 0;
-        } */
-        }
       `}
     >
       <div className="header">

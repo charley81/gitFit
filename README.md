@@ -28,19 +28,19 @@ gitFit is a quick and easy fitness partner. It's a fitness app built to help you
 
 1. Start by selecting a body part or choosing a default exercise. You can click the exercise box to view details or click the add to workout button to add the exercise to your workout
 
-![Home Page](https://res.cloudinary.com/charley81/image/upload/v1667213901/gitFit/Home_b9ts0t.png)
+![Home Page](https://res.cloudinary.com/charley81/image/upload/v1667216739/gitFit/Home_xaukbf.png)
 
 2. If you clicked the exercise box then you can view the exercise details. In the details page you find a GIF of how to perform the exercise, the body parts it focuses on and some similiar exercises
 
-![Details Page](https://res.cloudinary.com/charley81/image/upload/v1667213900/gitFit/Details_wnfw8p.png)
+![Details Page](https://res.cloudinary.com/charley81/image/upload/v1667216737/gitFit/Details_zp8qrf.png)
 
 3. By clicking the 'Add to Workout' button the exercise will be added to your workout page
 
-![Workout Page](https://res.cloudinary.com/charley81/image/upload/v1667213900/gitFit/Workout_sjdqlu.png)
+![Workout Page](https://res.cloudinary.com/charley81/image/upload/v1667216737/gitFit/Workout_hkll8b.png)
 
 4. Lastly once the backend is complete you'll be able to save, edit, and delete your workout stats using the provide form
 
-![Workout Tracker](https://res.cloudinary.com/charley81/image/upload/v1667213900/gitFit/Tracker_kj2ilg.png)
+![Workout Tracker](https://res.cloudinary.com/charley81/image/upload/v1667216826/gitFit/Tracker_uflk5e.png)
 
 ## Next Steps
 
